@@ -1,10 +1,10 @@
-/*Esse cÛdigo È referente a um sistema de HOTEL
-Basicamente o usu·rio poder· fazer RESERVA, CHECK-IN, CHECK-OUT e outras coisas...
+/*Esse c√≥digo √© referente a um sistema de HOTEL
+Basicamente o usu√°rio poder√° fazer RESERVA, CHECK-IN, CHECK-OUT e outras coisas...
 Para entrar com as coordenadar digite: (andar, apartamento) exemplo: 1, 1
-Me considero um iniciante em programaÁ„o, ent„o provavelmente poder· haver formas mais faceis de escrever esse cÛdigo(mudando funÁıes, lÛgica...)
-Foi desenvolvido por Jo„o Augusto Carrascoza
-Esse cÛdigo sÛ poder· ser utilizado em WINDOWS por causa do comando 'system("cls"); e o Sleep(5000);'
-Caso queira executar esse programa em LINUX, troque por 'system("clear"); e sleep(5);' e dever· apagar a biblioteca '<Windows.h>
+Me considero um iniciante em programa√ß√£o, ent√£o provavelmente poder√° haver formas mais faceis de escrever esse c√≥digo(mudando fun√ß√µes, l√≥gica...)
+Foi desenvolvido por Jo√£o Augusto Carrascoza
+Esse c√≥digo s√≥ poder√° ser utilizado em WINDOWS por causa do comando 'system("cls"); e o Sleep(5000);'
+Caso queira executar esse programa em LINUX, troque por 'system("clear"); e sleep(5);' e dever√° apagar a biblioteca '<Windows.h>
 Data 26/06/2022*/
 
 #include <stdio.h>
@@ -14,11 +14,11 @@ Data 26/06/2022*/
 #include <Windows.h>
 
 //Esse 'define' serve para a quantidade de ANDARES do HOTEL,
-//sÛ ir· alterar na MATRIZ (caso queira adicinoar, dever· mudar respectivamente os 'FOR' utilizados para criar a MATRIZ
+//s√≥ ir√° alterar na MATRIZ (caso queira adicinoar, dever√° mudar respectivamente os 'FOR' utilizados para criar a MATRIZ
 #define andar 21
 
 //Esse 'define' serve para a quantidade de  APARTAMENTOS do HOTEL,
-//sÛ ir· alterar na MATRIZ (caso queira adicinoar, dever· mudar respectivamente os 'FOR' utilizados para criar a MATRIZ
+//s√≥ ir√° alterar na MATRIZ (caso queira adicinoar, dever√° mudar respectivamente os 'FOR' utilizados para criar a MATRIZ
 #define ap 15
 
 struct informacoes{
@@ -31,7 +31,7 @@ struct informacoes{
 	char email[50];
 };
 
-//Compilado das FunÁıes
+//Compilado das Fun√ß√µes
 void mapa(struct informacoes hotel[andar][ap]);
 void reserva(struct informacoes hotel[andar][ap]);
 void CancelarReserva(struct informacoes hotel[andar][ap]);
@@ -65,14 +65,14 @@ int main(){
             printf("\n%s", MatrizMenu[j]);}
             printf("\n");
 
-            //Em seguida È apresentado uma pergunta para o usu·rio escolher a opcao desejada
+            //Em seguida √© apresentado uma pergunta para o usu√°rio escolher a opcao desejada
             printf("\nDigite uma opcao: ");
             scanf("%d", &opcao);
 
             //Utilizei esse comando para limpar a tela do terminal
             system("cls");
 
-            //Assim que o usu·rio digita a opcao desejada, inicia os comandos abaixo em relaÁ„o a opcao digitada
+            //Assim que o usu√°rio digita a opcao desejada, inicia os comandos abaixo em rela√ß√£o a opcao digitada
             switch (opcao){
 
                 //Check-in
@@ -100,7 +100,7 @@ int main(){
                     scanf("%d", &voltar);
                     if(voltar == -1) system("cls");
                     break;
-                //OcupaÁ„o
+                //Ocupa√ß√£o
                 case 6:
                     MostrarDados(hotel);
                     break;
@@ -110,26 +110,26 @@ int main(){
                 case 8:
                     break;}}
 
-    //A funÁ„o principal do WHILE È executar a opcao desejada e logo depois quando a opcao termina de executar o usu·rio
+    //A fun√ß√£o principal do WHILE √© executar a opcao desejada e logo depois quando a opcao termina de executar o usu√°rio
     //volta a tela inicial do MENU
 }
 
-//FunÁ„o que possibilita o usu·rio ver o MAPA de dormitÛrios do HOTEL
+//Fun√ß√£o que possibilita o usu√°rio ver o MAPA de dormit√≥rios do HOTEL
 void mapa(struct informacoes hotel[andar][ap]){
 
-        //Esta funÁ„o foi criada para receber a matriz de Andares e Apartamentos criada acima e completar
+        //Esta fun√ß√£o foi criada para receber a matriz de Andares e Apartamentos criada acima e completar
         //com os Andares e Apartamentos
 
         int i, j;
 
         printf("\nApto ---> \t");
 
-        //Utilizei o FOR abaixo para colocar o n˙meros dos Apartamentos no lugar exato de cada '.' ponto correspondente
+        //Utilizei o FOR abaixo para colocar o n√∫meros dos Apartamentos no lugar exato de cada '.' ponto correspondente
         for(j=1; j<15;j++)
         printf("%2d ", j);
         printf("\n\n");
 
-        //Utilizei esse FOR para criar a coluna de Andares e seus respectivos n˙meros
+        //Utilizei esse FOR para criar a coluna de Andares e seus respectivos n√∫meros
         for(int i=20; i>0;i--){
         printf("Andar %2d:\t", i);
 
@@ -140,23 +140,23 @@ void mapa(struct informacoes hotel[andar][ap]){
 
         printf ("\n");
 
-        //Logo apÛs isso a funÁ„o termina
+        //Logo ap√≥s isso a fun√ß√£o termina
 }
 
-//FunÁ„o que possibilita fazer a RESERVA de um dormitÛrio do HOTEL
+//Fun√ß√£o que possibilita fazer a RESERVA de um dormit√≥rio do HOTEL
 void reserva(struct informacoes hotel[andar][ap]){
 
     //Criamos esta funcao para fazer a Reserva do Andar e Apartamento
     int i, j;
 
-    //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+    //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
     void mapa(struct informacoes hotel[andar][ap]);
     mapa(hotel);
 
-    //Criei esse WHILE para iterar ate que o usu·rio digite uma coordenada valida
+    //Criei esse WHILE para iterar ate que o usu√°rio digite uma coordenada valida
     while(i != -1){
 
-        //Aqui È feita a pergunta para o usu·rio responder com o Andar e Apartamento desejado
+        //Aqui √© feita a pergunta para o usu√°rio responder com o Andar e Apartamento desejado
         printf("\nPara retornar ao MENU digite (-1,-1): ");
         printf("\nDigite (andar, apartamento): ");
         scanf("%d,%d", &i, &j);
@@ -164,13 +164,13 @@ void reserva(struct informacoes hotel[andar][ap]){
         //Utilizei esse comando para limpar a tela do terminal
         system("cls");
 
-        //Logo apÛs o usu·rio digitar È testado a validade das coordenadas
+        //Logo ap√≥s o usu√°rio digitar √© testado a validade das coordenadas
         if(i == -1 && j == -1){
                 i == -1;}
                 else
                     if (j<1 || j>14 || i<1 || i>20){
 
-                        //Mensagem de aviso para o usu·rio
+                        //Mensagem de aviso para o usu√°rio
                         printf("\n------------------------------");
                         printf("\n|Digite uma coordenada valida|");
                         printf("\n------------------------------");
@@ -181,13 +181,13 @@ void reserva(struct informacoes hotel[andar][ap]){
                         //Utilizei esse comando para limpar a tela do terminal
                         system("cls");
 
-                        //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                        //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                         mapa(hotel);}
 
                         else
-                            //Utilizei esse IF para ver se a coordenada que o usu·rio digitou j· esta reservado
+                            //Utilizei esse IF para ver se a coordenada que o usu√°rio digitou j√° esta reservado
                             if(hotel[i][j].status == 'R'){
-                                //Mensagem de aviso para o usu·rio
+                                //Mensagem de aviso para o usu√°rio
                                 printf("\n-----------------------------------");
                                 printf("\n|Este dormitorio ja esta reservado|");
                                 printf("\n-----------------------------------");
@@ -198,14 +198,14 @@ void reserva(struct informacoes hotel[andar][ap]){
                                 //Utilizei esse comando para limpar a tela do terminal
                                 system("cls");
 
-                                //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                                //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                                 mapa(hotel);}
 
                                 else
 
-                                    //Utilizei esse IF para ver se a coordenada j· est· ocupada
+                                    //Utilizei esse IF para ver se a coordenada j√° est√° ocupada
                                     if(hotel[i][j].status == 'O'){
-                                        //Mensagem de aviso para o usu·rio
+                                        //Mensagem de aviso para o usu√°rio
                                         printf("\n---------------------------------");
                                         printf("\n|Este dormitorio ja esta ocupado|");
                                         printf("\n---------------------------------");
@@ -216,14 +216,14 @@ void reserva(struct informacoes hotel[andar][ap]){
                                         //Utilizei esse comando para limpar a tela do terminal
                                         system("cls");
 
-                                        //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                                        //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                                         mapa(hotel);}
                             else{
 
-                                    //Se tudo estiver correto as coordenadas ser„o marcadas na Matriz
+                                    //Se tudo estiver correto as coordenadas ser√£o marcadas na Matriz
                                     hotel[i][j].status = 'R';
 
-                                    //Utilizei esse comando abaixo para pegar os dados do usu·rio
+                                    //Utilizei esse comando abaixo para pegar os dados do usu√°rio
                                     printf("\n--------------------------------------------------------");
                                     printf("\n|Para concluir a sua reserva, digite os seguintes dados|");
                                     printf("\n--------------------------------------------------------\n");
@@ -251,7 +251,7 @@ void reserva(struct informacoes hotel[andar][ap]){
                                     //Utilizei esse comando para limpar a tela do terminal
                                     system("cls");
 
-                                    //Mensagem de aviso para o usu·rio
+                                    //Mensagem de aviso para o usu√°rio
                                     printf("\n---------------------------");
                                     printf("\n|Sua reserva foi concluida|");
                                     printf("\n---------------------------");
@@ -262,28 +262,24 @@ void reserva(struct informacoes hotel[andar][ap]){
                                     //Utilizei esse comando para limpar a tela do terminal
                                     system("cls");
 
-                                    //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                                    //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                                     i = -1;}}
 }
 
-//FunÁ„o que possibilita fazer o CANCELAMENTO de uma RESERVA de um dormitÛrio do HOTEL
+//Fun√ß√£o que possibilita fazer o CANCELAMENTO de uma RESERVA de um dormit√≥rio do HOTEL
 void CancelarReserva(struct informacoes hotel[andar][ap]){
 
     //Criamos esta funcao para fazer a Reserva do Andar e Apartamento
     int i, j;
 
-    //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+    //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
     void mapa(struct informacoes hotel[andar][ap]);
     mapa(hotel);
 
-    //Utilizei esse comando para limpar a tela do terminal
-    system("cls");
-
-
-    //Criei esse WHILE para iterar ate que o usu·rio digite uma coordenada valida
+    //Criei esse WHILE para iterar ate que o usu√°rio digite uma coordenada valida
     while(i != -1){
 
-        //Aqui È feita a pergunta para o usu·rio responder com o Andar e Apartamento desejado
+        //Aqui √© feita a pergunta para o usu√°rio responder com o Andar e Apartamento desejado
         printf("\nPara retornar ao MENU digite (-1,-1): ");
         printf("\nDigite (andar, apartamento) para cancelar a reserva: ");
         scanf("%d,%d", &i, &j);
@@ -292,13 +288,13 @@ void CancelarReserva(struct informacoes hotel[andar][ap]){
         system("cls");
 
 
-        //Logo apÛs o usu·rio digitar È testado a validade das coordenadas
+        //Logo ap√≥s o usu√°rio digitar √© testado a validade das coordenadas
         if(i == -1 && j == -1){
                 i == -1;}
                 else
                     if (j<1 || j>14 || i<1 || i>20){
 
-                        //Mensagem de aviso para o usu·rio
+                        //Mensagem de aviso para o usu√°rio
                         printf("\n------------------------------");
                         printf("\n|Digite uma coordenada valida|");
                         printf("\n------------------------------");
@@ -309,15 +305,15 @@ void CancelarReserva(struct informacoes hotel[andar][ap]){
                         //Utilizei esse comando para limpar a tela do terminal
                         system("cls");
 
-                        //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                        //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                         mapa(hotel);}
 
                         else
 
-                            //Utilizei esse IF para ver se a coordenada que o usu·rio digitou j· esta reservado
+                            //Utilizei esse IF para ver se a coordenada que o usu√°rio digitou j√° esta reservado
                             if(hotel[i][j].status == 'O'){
 
-                                //Mensagem de aviso para o usu·rio
+                                //Mensagem de aviso para o usu√°rio
                                 printf("\n---------------------------------");
                                 printf("\n|Este dormitorio ja esta ocupado|");
                                 printf("\n---------------------------------");
@@ -328,14 +324,14 @@ void CancelarReserva(struct informacoes hotel[andar][ap]){
                                 //Utilizei esse comando para limpar a tela do terminal
                                 system("cls");
 
-                                //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                                //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                                 mapa(hotel);}
 
                                 else
 
-                                    //Utilizei esse IF para ver se a coordenada j· est· ocupada
+                                    //Utilizei esse IF para ver se a coordenada j√° est√° ocupada
                                     if(hotel[i][j].status == '.'){
-                                        //Mensagem de aviso para o usu·rio
+                                        //Mensagem de aviso para o usu√°rio
                                         printf("\n------------------------------------");
                                         printf("\n|Este dormitorio nao esta reservado|");
                                         printf("\n------------------------------------");
@@ -346,14 +342,14 @@ void CancelarReserva(struct informacoes hotel[andar][ap]){
                                         //Utilizei esse comando para limpar a tela do terminal
                                         system("cls");
 
-                                        //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                                        //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                                         mapa(hotel);}
                             else{
 
-                                    //Se tudo estiver correto as coordenadas ser„o marcadas na Matriz
+                                    //Se tudo estiver correto as coordenadas ser√£o marcadas na Matriz
                                     hotel[i][j].status = '.';
 
-                                    //Mensagem de aviso para o usu·rio
+                                    //Mensagem de aviso para o usu√°rio
                                     printf("\n-----------------------------------------");
                                     printf("\n|O cancelamento da reserva foi concluido|");
                                     printf("\n-----------------------------------------");
@@ -364,20 +360,20 @@ void CancelarReserva(struct informacoes hotel[andar][ap]){
                                     //Utilizei esse comando para limpar a tela do terminal
                                     system("cls");
 
-                                    //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                                    //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                                     i = -1;}}
 }
 
-//FunÁ„o que possibilita fazer o Check-in de um dormitÛrio do HOTEL
+//Fun√ß√£o que possibilita fazer o Check-in de um dormit√≥rio do HOTEL
 void CheckIn(struct informacoes hotel[andar][ap]){
 
-    //Criamos essa funcao para fazer o Check-in dos dormitÛrios
+    //Criamos essa funcao para fazer o Check-in dos dormit√≥rios
 
     int i, j;
 
-    //Utilizei esse DO-WHILE para faÁa um loop ate que o usu·rio digite uma coordenada v·lida
+    //Utilizei esse DO-WHILE para fa√ßa um loop ate que o usu√°rio digite uma coordenada v√°lida
     do{
-        //Aqui È feita a pergunta para o usu·rio responder com o Andar e Apartamento desejado
+        //Aqui √© feita a pergunta para o usu√°rio responder com o Andar e Apartamento desejado
         printf("\nPara retornar ao MENU digite (-1,-1): ");
         printf("\nDigite (andar, apartamento): ");
         scanf("%d,%d", &i, &j);
@@ -385,14 +381,14 @@ void CheckIn(struct informacoes hotel[andar][ap]){
         //Utilizei esse comando para limpar a tela do terminal
         system("cls");
 
-        //Logo apÛs o usu·rio digitar È testado a validade das coordenadas
+        //Logo ap√≥s o usu√°rio digitar √© testado a validade das coordenadas
         if(i == -1 && j == -1){
                 i == -1;}
                 else
 
-                    //Utilizei esse IF para ver se a coordenada digitada est· dentro da matriz
+                    //Utilizei esse IF para ver se a coordenada digitada est√° dentro da matriz
                     if (i<1 || i>20 || j<1 || j>14){
-                        //Mensagem de aviso para o usu·rio
+                        //Mensagem de aviso para o usu√°rio
                         printf("\n------------------------------");
                         printf("\n|Digite uma coordenada valida|");
                         printf("\n------------------------------");
@@ -403,18 +399,18 @@ void CheckIn(struct informacoes hotel[andar][ap]){
                         //Utilizei esse comando para limpar a tela do terminal
                         system("cls");
 
-                        //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                        //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                         mapa(hotel);}
 
-            //Utilei esse ELSE caso o usu·rio digite um valor valido e que essa coordenada j· esteva reservada
+            //Utilei esse ELSE caso o usu√°rio digite um valor valido e que essa coordenada j√° esteva reservada
             else
 
-                //Utilizei esse IF para ver se a coordenada j· est· reservada, caso esteja muda o status para Ocupado
+                //Utilizei esse IF para ver se a coordenada j√° est√° reservada, caso esteja muda o status para Ocupado
                 if (hotel[i][j].status == 'R'){
 
                     hotel[i][j].status = 'O';
 
-                    //Mensagem de aviso para o usu·rio
+                    //Mensagem de aviso para o usu√°rio
                     printf("\n----------------------------------------");
                     printf("\n|Seu Check-in foi executado com sucesso|");
                     printf("\n----------------------------------------");
@@ -425,16 +421,16 @@ void CheckIn(struct informacoes hotel[andar][ap]){
                     //Utilizei esse comando para limpar a tela do terminal
                     system("cls");
 
-                    //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                    //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                     i = -1;}
 
-                    //Utilizei o ELSE abaico para caso a coordenada digitada pelo usu·rio j· esteja ocupada
+                    //Utilizei o ELSE abaico para caso a coordenada digitada pelo usu√°rio j√° esteja ocupada
                     else
 
-                        //Utilizei esse IF para conferir se a coordenada digitada j· est· Ocupada
+                        //Utilizei esse IF para conferir se a coordenada digitada j√° est√° Ocupada
                         if(hotel[i][j].status == 'O'){
 
-                            //Mensagem de aviso para o usu·rio
+                            //Mensagem de aviso para o usu√°rio
                             printf("\n----------------------------------------------------------");
                             printf("\n|Este dormitorio ja esta ocupado, digite outra coordenada|");
                             printf("\n----------------------------------------------------------");
@@ -445,10 +441,10 @@ void CheckIn(struct informacoes hotel[andar][ap]){
                             //Utilizei esse comando para limpar a tela do terminal
                             system("cls");
 
-                            //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                            //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                             mapa(hotel);}
 
-                            //Utilizei o ELSE abixo para caso a coordenada digitada pelo usu·rio ainda n„o esteja
+                            //Utilizei o ELSE abixo para caso a coordenada digitada pelo usu√°rio ainda n√£o esteja
                             //reservada
                             else
 
@@ -456,7 +452,7 @@ void CheckIn(struct informacoes hotel[andar][ap]){
 
                                     hotel[i][j].status = 'O';
 
-                                    //Utilizei esse comando abaixo para pegar os dados do usu·rio
+                                    //Utilizei esse comando abaixo para pegar os dados do usu√°rio
                                     printf("\n--------------------------------------------------------");
                                     printf("\n|Para concluir a sua reserva, digite os seguintes dados|");
                                     printf("\n--------------------------------------------------------\n");
@@ -484,7 +480,7 @@ void CheckIn(struct informacoes hotel[andar][ap]){
                                     //Utilizei esse comando para limpar a tela do terminal
                                     system("cls");
 
-                                    //Mensagem de aviso para o usu·rio
+                                    //Mensagem de aviso para o usu√°rio
                                     printf("\n----------------------------------------");
                                     printf("\n|Seu Check-in foi executado com sucesso|");
                                     printf("\n----------------------------------------");
@@ -495,23 +491,23 @@ void CheckIn(struct informacoes hotel[andar][ap]){
                                     //Utilizei esse comando para limpar a tela do terminal
                                     system("cls");
 
-                                    //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                                    //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                                     i = -1;}
 
 
     }while(i != -1);
 }
 
-//FunÁ„o que possibilita fazer o Check-out de um dormitÛrio do HOTEL
+//Fun√ß√£o que possibilita fazer o Check-out de um dormit√≥rio do HOTEL
 void CheckOut(struct informacoes hotel[andar][ap]){
 
-    //Criamos essa funcao para fazer o Check-Out dos dormitÛrios
+    //Criamos essa funcao para fazer o Check-Out dos dormit√≥rios
 
     int i, j;
 
-    //Utilizei esse DO-WHILE para faÁa um loop ate que o usu·rio digite uma coordenada v·lida
+    //Utilizei esse DO-WHILE para fa√ßa um loop ate que o usu√°rio digite uma coordenada v√°lida
     do{
-        //Aqui È feita a pergunta para o usu·rio responder com o Andar e Apartamento desejado
+        //Aqui √© feita a pergunta para o usu√°rio responder com o Andar e Apartamento desejado
         printf("\nPara retornar ao MENU digite (-1,-1): ");
         printf("\nDigite (andar, apartamento): ");
         scanf("%d,%d", &i, &j);
@@ -519,14 +515,14 @@ void CheckOut(struct informacoes hotel[andar][ap]){
         //Utilizei esse comando para limpar a tela do terminal
         system("cls");
 
-        //Logo apÛs o usu·rio digitar È testado a validade das coordenadas
+        //Logo ap√≥s o usu√°rio digitar √© testado a validade das coordenadas
         if(i == -1 && j == -1){
                 i == -1;}
                 else
 
-                    //Utilizei esse IF para ver se a coordenada digitada est· dentro da matriz
+                    //Utilizei esse IF para ver se a coordenada digitada est√° dentro da matriz
                     if (i<1 || i>20 || j<1 || j>14){
-                        //Mensagem de aviso para o usu·rio
+                        //Mensagem de aviso para o usu√°rio
                         printf("\n------------------------------");
                         printf("\n|Digite uma coordenada valida|");
                         printf("\n------------------------------");
@@ -537,18 +533,18 @@ void CheckOut(struct informacoes hotel[andar][ap]){
                         //Utilizei esse comando para limpar a tela do terminal
                         system("cls");
 
-                        //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                        //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                         mapa(hotel);}
 
-            //Utilei esse ELSE caso o usu·rio digite um valor valido e que essa coordenada j· esteva Ocupada
+            //Utilei esse ELSE caso o usu√°rio digite um valor valido e que essa coordenada j√° esteva Ocupada
             else
 
-                //Utilizei esse IF para ver se a coordenada j· estava ocupada, caso esteja muda o status para Disponivel
+                //Utilizei esse IF para ver se a coordenada j√° estava ocupada, caso esteja muda o status para Disponivel
                 if (hotel[i][j].status == 'O'){
 
                     hotel[i][j].status = '.';
 
-                    //Mensagem de aviso para o usu·rio
+                    //Mensagem de aviso para o usu√°rio
                     printf("\n-----------------------------------------");
                     printf("\n|Seu Check-out foi executado com sucesso|");
                     printf("\n-----------------------------------------");
@@ -559,16 +555,16 @@ void CheckOut(struct informacoes hotel[andar][ap]){
                     //Utilizei esse comando para limpar a tela do terminal
                     system("cls");
 
-                    //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                    //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                     i = -1;}
 
-                    //Utilizei o ELSE abaico para caso a coordenada digitada pelo usu·rio j· esteja reservada
+                    //Utilizei o ELSE abaico para caso a coordenada digitada pelo usu√°rio j√° esteja reservada
                     else
 
-                        //Utilizei esse IF para conferir se a coordenada digitada j· est· Ocupada
+                        //Utilizei esse IF para conferir se a coordenada digitada j√° est√° Ocupada
                         if(hotel[i][j].status == 'R'){
 
-                            //Mensagem de aviso para o usu·rio
+                            //Mensagem de aviso para o usu√°rio
                             printf("\n---------------------------------------------------------");
                             printf("\n|Este dormitorio esta reservado, digite outra coordenada|");
                             printf("\n---------------------------------------------------------");
@@ -579,14 +575,14 @@ void CheckOut(struct informacoes hotel[andar][ap]){
                             //Utilizei esse comando para limpar a tela do terminal
                             system("cls");
 
-                            //Chamei a FunÁ„o MAPA para auxiliar o usu·rio na tomada de decis„o
+                            //Chamei a Fun√ß√£o MAPA para auxiliar o usu√°rio na tomada de decis√£o
                             mapa(hotel);}
 
-                            //Utilizei o ELSE abixo para caso a coordenada digitada pelo usu·rio ainda n„o esteja
+                            //Utilizei o ELSE abixo para caso a coordenada digitada pelo usu√°rio ainda n√£o esteja
                             //reservada
                             else{
 
-                                        //Mensagem de aviso para o usu·rio
+                                        //Mensagem de aviso para o usu√°rio
                                         printf("\n-----------------------------------------------");
                                         printf("\n|Nao ha nenhuma reserva feita neste dormitorio|");
                                         printf("\n-----------------------------------------------");
@@ -597,14 +593,14 @@ void CheckOut(struct informacoes hotel[andar][ap]){
                                         //Utilizei esse comando para limpar a tela do terminal
                                         system("cls");
 
-                                        //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                                        //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                                         i = -1;}
 
 
     }while(i != -1);
 }
 
-//FunÁ„o que mostra em PORCENTAGEM a TAXA de OCUPA«√O, RESERVA e dormitÛrios LIVRES do HOTEL
+//Fun√ß√£o que mostra em PORCENTAGEM a TAXA de OCUPA√á√ÉO, RESERVA e dormit√≥rios LIVRES do HOTEL
 void TaxaDeNaoVacancia(struct informacoes hotel[andar][ap]){
 
     int i, j;
@@ -613,31 +609,31 @@ void TaxaDeNaoVacancia(struct informacoes hotel[andar][ap]){
     int ContadorLivre = 0;
     float TaxaOcupacao, TaxaReserva, TaxaLivre;
 
-    //Utilizei esse FOR abaixo para contar a quantidade de dormitÛrios ocupados no Hotel
+    //Utilizei esse FOR abaixo para contar a quantidade de dormit√≥rios ocupados no Hotel
     for(i=20; i>0; i--)
         for(j=1; j<15;j++){
             if(hotel[i][j].status == 'O'){
                 ContadorOcupacao = ContadorOcupacao + 1;}}
 
-    //Utilizei esse FOR abaixo para contar a quantidade de dormitÛrios reservados no Hotel
+    //Utilizei esse FOR abaixo para contar a quantidade de dormit√≥rios reservados no Hotel
     for(i=20; i>0; i--)
         for(j=1; j<15;j++){
             if(hotel[i][j].status == 'R'){
                 ContadorReserva = ContadorReserva + 1;}}
 
-    //Utilizei esse FOR abaixo para contar a quantidade  dormitÛrios livres no Hotel
+    //Utilizei esse FOR abaixo para contar a quantidade  dormit√≥rios livres no Hotel
     for(i=20; i>0; i--)
         for(j=1; j<15;j++){
             if(hotel[i][j].status == '.'){
                 ContadorLivre = ContadorLivre + 1;}}
 
-    //Usei essa TaxaOcupacao para calcular a porcetagem de dormitÛrios Ocupados do Hotel
+    //Usei essa TaxaOcupacao para calcular a porcetagem de dormit√≥rios Ocupados do Hotel
     TaxaOcupacao = ContadorOcupacao * 100.0 / 280.0;
 
-    //Usei essa TaxaReserva para calcular a porcetagem de dormitÛrios Reservados do Hotel
+    //Usei essa TaxaReserva para calcular a porcetagem de dormit√≥rios Reservados do Hotel
     TaxaReserva  = ContadorReserva  * 100.0 / 280.0;
 
-    //Usei essa TaxaLivre para calcular a porcetagem de dormitÛrios Livres do Hotel
+    //Usei essa TaxaLivre para calcular a porcetagem de dormit√≥rios Livres do Hotel
     TaxaLivre    = ContadorLivre    * 100.0 / 280.0;
 
     //Aqui vai ser impresso na tela a porcentagem de cada status do Hotel
@@ -652,16 +648,16 @@ void TaxaDeNaoVacancia(struct informacoes hotel[andar][ap]){
     system("cls");
 }
 
-//FunÁ„o que possibilita imprimir os dados do usu·rio de acordo com a coordenada desejada
+//Fun√ß√£o que possibilita imprimir os dados do usu√°rio de acordo com a coordenada desejada
 void MostrarDados(struct informacoes hotel[andar][ap]){
 
-    // Neste caso o i e j ser„o as variaveis de andar e apartamento respectivamente
+    // Neste caso o i e j ser√£o as variaveis de andar e apartamento respectivamente
     int i, j;
 
-    //Criei esse WHILE para iterar ate que o usu·rio digite uma coordenada valida
+    //Criei esse WHILE para iterar ate que o usu√°rio digite uma coordenada valida
     while(i != -1){
 
-        //Aqui È feita a pergunta para o usu·rio responder com o Andar e Apartamento desejado
+        //Aqui √© feita a pergunta para o usu√°rio responder com o Andar e Apartamento desejado
         printf("\nPara retornar ao MENU digite (-1,-1): ");
         printf("\nDigite (andar, apartamento) para exibir os dados desse cliente: ");
         scanf("%d,%d", &i,&j);
@@ -669,13 +665,13 @@ void MostrarDados(struct informacoes hotel[andar][ap]){
         //Utilizei esse comando para limpar a tela do terminal
         system("cls");
 
-        //Logo apÛs o usu·rio digitar È testado a validade das coordenadas
+        //Logo ap√≥s o usu√°rio digitar √© testado a validade das coordenadas
         if(i == -1 && j == -1){
                 i == -1;}
                 else
                     if (j<1 || j>14 || i<1 || i>20){
 
-                        //Mensagem de aviso para o usu·rio
+                        //Mensagem de aviso para o usu√°rio
                         printf("\n------------------------------");
                         printf("\n|Digite uma coordenada valida|");
                         printf("\n------------------------------");
@@ -703,10 +699,10 @@ void MostrarDados(struct informacoes hotel[andar][ap]){
 
                                 else
 
-                                    //Utilizei esse IF para ver se a coordenada que o usu·rio digitou j· esta reservado
+                                    //Utilizei esse IF para ver se a coordenada que o usu√°rio digitou j√° esta reservado
                                     if(hotel[i][j].status == 'R'){
 
-                                        //Aqui ser· mostrado cada dado de acordo com as coordenadas digitadas
+                                        //Aqui ser√° mostrado cada dado de acordo com as coordenadas digitadas
                                         printf("\nNome: %s ",hotel[i][j].nome);
                                         printf("\nCelular: %s ",hotel[i][j].celular);
                                         printf("\nCPF: %s ",hotel[i][j].CPF);
@@ -720,13 +716,13 @@ void MostrarDados(struct informacoes hotel[andar][ap]){
                                         system("cls");
 
 
-                                        //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                                        //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                                         i = -1;}
 
                                         else
                                             if(hotel[i][j].status == 'O'){
 
-                                                //Aqui ser· mostrado cada dado de acordo com as coordenadas digitadas
+                                                //Aqui ser√° mostrado cada dado de acordo com as coordenadas digitadas
                                                 printf("\nNome: %s ",hotel[i][j].nome);
                                                 printf("\nCelular: %s ",hotel[i][j].celular);
                                                 printf("\nCPF: %s ",hotel[i][j].CPF);
@@ -739,6 +735,6 @@ void MostrarDados(struct informacoes hotel[andar][ap]){
                                                 //Utilizei esse comando para limpar a tela do terminal
                                                 system("cls");
 
-                                                //Utilizei o comando abaixo para finalizar a sess„o e retornar ao MENU
+                                                //Utilizei o comando abaixo para finalizar a sess√£o e retornar ao MENU
                                                 i = -1;}}
 }
